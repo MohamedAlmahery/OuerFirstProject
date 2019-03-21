@@ -8,25 +8,6 @@
     tools:context=".Main2Activity"
     android:orientation="vertical"
     >
-    <TextView
-        android:id="@+id/txtshow"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:textSize="60dp"
-        android:textStyle="italic"
-        android:visibility="gone"
-        android:text="hello"
-        />
-    <TextView
-
-        android:text="Muhammad Elshikh"
-        android:layout_width="200dp"
-        android:layout_height="200dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textshow"
-        android:text="btnshow"/>
 
 
 </LinearLayout>

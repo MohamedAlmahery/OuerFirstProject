@@ -1,55 +1,62 @@
 package com.phoenix.ouerfirstproject;
 
-
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
+import com.phoenix.ouerfirstproject.Model.Data;
+import com.phoenix.ouerfirstproject.ViewHolderAdapter.RecyclerViewAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn;
+    private RecyclerView recyclerView;
+    private RecyclerViewAdapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
+
+    private List<Data> listData = new ArrayList<Data>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "Create", Toast.LENGTH_SHORT).show();
+        //Create Init Data
+        initData();
+        recyclerView = (RecyclerView)findViewById(R.id.recycleview);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new RecyclerViewAdapter(listData);
+        recyclerView.setAdapter(adapter);
+    }
 
-        btn = (Button)findViewById(R.id.btnActivity2);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent show = new Intent(MainActivity.this,Main2Activity.class);
-                startActivity(show);
-            }
-        });
-    }
-    public void onStart() {
-        super.onStart();
-        Toast.makeText(this, "Start", Toast.LENGTH_SHORT).show();
-    }
-    public void onResume() {
-        super.onResume();
-        Toast.makeText(this, "Resume", Toast.LENGTH_SHORT).show();
-    }
-    public void onPause() {
-        super.onPause();
-        Toast.makeText(this, "Pause", Toast.LENGTH_SHORT).show();
-    }
-    public void onStop() {
-        super.onStop();
-        Toast.makeText(this, "Stop", Toast.LENGTH_SHORT).show();
-    }
-    public void onDestroy() {
-        super.onDestroy();
-        Toast.makeText(this, "Destroy", Toast.LENGTH_SHORT).show();
-    }
-    public void onRestart() {
-        super.onRestart();
-        Toast.makeText(this, "Restart", Toast.LENGTH_SHORT).show();
+    private void initData() {
+        listData.add(new Data("SuperMan", R.drawable.pic1));
+        listData.add(new Data("LogoBat", R.drawable.pic2));
+        listData.add(new Data("LogoTiger", R.drawable.pic3));
+        //Copy
+        listData.add(new Data("SuperMan", R.drawable.pic1));
+        listData.add(new Data("LogoBat", R.drawable.pic2));
+        listData.add(new Data("LogoTiger", R.drawable.pic3));
+        //Copy
+        listData.add(new Data("SuperMan", R.drawable.pic1));
+        listData.add(new Data("LogoBat", R.drawable.pic2));
+        listData.add(new Data("LogoTiger", R.drawable.pic3));
+        //Copy
+        listData.add(new Data("SuperMan", R.drawable.pic1));
+        listData.add(new Data("LogoBat", R.drawable.pic2));
+        listData.add(new Data("LogoTiger", R.drawable.pic3));
+        //Copy
+        listData.add(new Data("SuperMan", R.drawable.pic1));
+        listData.add(new Data("LogoBat", R.drawable.pic2));
+        listData.add(new Data("LogoTiger", R.drawable.pic3));
+        //Copy
+        listData.add(new Data("SuperMan", R.drawable.pic1));
+        listData.add(new Data("LogoBat", R.drawable.pic2));
+        listData.add(new Data("LogoTiger", R.drawable.pic3));
+
     }
 
 }
